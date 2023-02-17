@@ -535,8 +535,8 @@ open class AppsAdapter(
         return when {
             mAppTypes.contains(AppCategory.OTHER) -> RowType.APPS
             mAppTypes.contains(AppCategory.VIDEO) -> RowType.VIDEO
-            mAppTypes.contains(AppCategory.MUSIC) -> RowType.MUSIC
-            mAppTypes.contains(AppCategory.GAME) -> RowType.GAMES
+            mAppTypes.contains(AppCategory.TV) -> RowType.MUSIC
+            mAppTypes.contains(AppCategory.SPORTS) -> RowType.GAMES
             this is FavoritesAdapter -> RowType.FAVORITES
             this is SettingsAdapter -> RowType.SETTINGS // TODO
             else -> null
@@ -616,14 +616,14 @@ open class AppsAdapter(
                             AppCategory.VIDEO
                         )
                     )
-                    AppCategory.MUSIC -> launchPoints.addAll(
+                    AppCategory.TV -> launchPoints.addAll(
                         mAppsManager!!.getLaunchPointsByCategory(
-                            AppCategory.MUSIC
+                            AppCategory.TV
                         )
                     )
-                    AppCategory.GAME -> launchPoints.addAll(
+                    AppCategory.SPORTS -> launchPoints.addAll(
                         mAppsManager!!.getLaunchPointsByCategory(
-                            AppCategory.GAME
+                            AppCategory.SPORTS
                         )
                     )
                     AppCategory.SETTINGS -> launchPoints.addAll(
@@ -726,8 +726,8 @@ open class AppsAdapter(
                 val userMax: Int = when {
                     mAppTypes.contains(AppCategory.OTHER) -> getRowMax(AppCategory.OTHER, mContext)
                     mAppTypes.contains(AppCategory.VIDEO) -> getRowMax(AppCategory.VIDEO, mContext)
-                    mAppTypes.contains(AppCategory.MUSIC) -> getRowMax(AppCategory.MUSIC, mContext)
-                    mAppTypes.contains(AppCategory.GAME) -> getRowMax(AppCategory.GAME, mContext)
+                    mAppTypes.contains(AppCategory.TV) -> getRowMax(AppCategory.TV, mContext)
+                    mAppTypes.contains(AppCategory.SPORTS) -> getRowMax(AppCategory.SPORTS, mContext)
                     else -> mContext.resources.getInteger(R.integer.max_num_banner_rows)
                 }
                 var base = abs(curApps / maxApps)

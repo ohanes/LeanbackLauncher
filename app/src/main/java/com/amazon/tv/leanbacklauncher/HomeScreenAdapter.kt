@@ -196,7 +196,7 @@ class HomeScreenAdapter(
                 true
             )
         }
-        if (enabledCategories.contains(AppCategory.MUSIC)) {
+        if (enabledCategories.contains(AppCategory.TV)) {
             buildRow(
                 RowType.MUSIC,
                 position++,
@@ -207,7 +207,7 @@ class HomeScreenAdapter(
                 true
             )
         }
-        if (enabledCategories.contains(AppCategory.GAME)) {
+        if (enabledCategories.contains(AppCategory.SPORTS)) {
             buildRow(
                 RowType.GAMES,
                 position++,
@@ -521,13 +521,13 @@ class HomeScreenAdapter(
                     list.adjustNumRows(maxRows, cardSpacing, rowHeight)
                 }
                 RowType.GAMES -> {
-                    userMax = getRowMax(AppCategory.GAME, mMainActivity)
+                    userMax = getRowMax(AppCategory.SPORTS, mMainActivity)
                     maxRows = if (base > 0) base.coerceAtMost(userMax) else minRows
                     list.setIsNumRowsAdjustable(true)
                     list.adjustNumRows(maxRows, cardSpacing, rowHeight)
                 }
                 RowType.MUSIC -> {
-                    userMax = getRowMax(AppCategory.MUSIC, mMainActivity)
+                    userMax = getRowMax(AppCategory.TV, mMainActivity)
                     maxRows = if (base > 0) base.coerceAtMost(userMax) else minRows
                     list.setIsNumRowsAdjustable(true)
                     list.adjustNumRows(maxRows, cardSpacing, rowHeight)
@@ -599,13 +599,13 @@ class HomeScreenAdapter(
                 val categories: MutableSet<AppCategory> = HashSet()
                 categories.add(AppCategory.OTHER)
                 if (!enabledCategories.contains(AppCategory.VIDEO)) categories.add(AppCategory.VIDEO)
-                if (!enabledCategories.contains(AppCategory.MUSIC)) categories.add(AppCategory.MUSIC)
-                if (!enabledCategories.contains(AppCategory.GAME)) categories.add(AppCategory.GAME)
+                if (!enabledCategories.contains(AppCategory.TV)) categories.add(AppCategory.TV)
+                if (!enabledCategories.contains(AppCategory.SPORTS)) categories.add(AppCategory.SPORTS)
                 AppsAdapter(mMainActivity, null, *categories.toTypedArray())
             }
             RowType.VIDEO -> AppsAdapter(mMainActivity, null, AppCategory.VIDEO)
-            RowType.MUSIC -> AppsAdapter(mMainActivity, null, AppCategory.MUSIC)
-            RowType.GAMES -> AppsAdapter(mMainActivity, null, AppCategory.GAME)
+            RowType.MUSIC -> AppsAdapter(mMainActivity, null, AppCategory.TV)
+            RowType.GAMES -> AppsAdapter(mMainActivity, null, AppCategory.SPORTS)
             RowType.SETTINGS -> mSettingsAdapter
             RowType.INPUTS -> {
                 // TODO this.mPartner.showPhysicalTunersSeparately(), this.mPartner.disableDisconnectedInputs(), this.mPartner.getStateIconFromTVInput()

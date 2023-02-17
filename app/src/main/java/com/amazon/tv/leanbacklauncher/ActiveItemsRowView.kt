@@ -148,8 +148,8 @@ open class ActiveItemsRowView @JvmOverloads constructor(
             val userMax: Int = when (type) {
                 RowType.APPS -> RowPreferences.getRowMax(AppCategory.OTHER, context)
                 RowType.VIDEO -> RowPreferences.getRowMax(AppCategory.VIDEO, context)
-                RowType.MUSIC -> RowPreferences.getRowMax(AppCategory.MUSIC, context)
-                RowType.GAMES -> RowPreferences.getRowMax(AppCategory.GAME, context)
+                RowType.MUSIC -> RowPreferences.getRowMax(AppCategory.TV, context)
+                RowType.GAMES -> RowPreferences.getRowMax(AppCategory.SPORTS, context)
                 RowType.FAVORITES -> RowPreferences.getFavoriteRowMax(context)
                 else -> context.resources.getInteger(R.integer.max_num_banner_rows)
             }

@@ -292,7 +292,7 @@ class LaunchPoint {
     }
 
     val isGame: Boolean
-        get() = appCategory == AppCategory.GAME
+        get() = appCategory == AppCategory.SPORTS
 
     fun getInstallProgressString(context: Context): String {
         return if (installProgressPercent == -1) {

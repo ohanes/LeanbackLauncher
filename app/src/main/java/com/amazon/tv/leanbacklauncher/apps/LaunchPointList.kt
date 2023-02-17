@@ -594,12 +594,12 @@ class LaunchPointList(ctx: Context) {
                     childList.add(lp)
                 }
             }
-            AppCategory.MUSIC -> for (lp in parentList) {
-                if (!isFavorited(lp.packageName) && !isBlacklisted(lp.packageName) && lp.appCategory == AppCategory.MUSIC) {
+            AppCategory.TV -> for (lp in parentList) {
+                if (!isFavorited(lp.packageName) && !isBlacklisted(lp.packageName) && lp.appCategory == AppCategory.TV) {
                     childList.add(lp)
                 }
             }
-            AppCategory.GAME -> for (lp in parentList) {
+            AppCategory.SPORTS -> for (lp in parentList) {
                 if (!isFavorited(lp.packageName) && !isBlacklisted(lp.packageName) && lp.isGame) {
                     childList.add(lp)
                 }

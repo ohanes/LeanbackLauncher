@@ -101,12 +101,12 @@ object RowPreferences {
                 context.getString(R.string.pref_enable_games_row),
                 true
             )
-        ) categories.add(AppCategory.GAME)
+        ) categories.add(AppCategory.SPORTS)
         if (pref.getBoolean(
                 context.getString(R.string.pref_enable_music_row),
                 true
             )
-        ) categories.add(AppCategory.MUSIC)
+        ) categories.add(AppCategory.TV)
         if (pref.getBoolean(
                 context.getString(R.string.pref_enable_videos_row),
                 true
@@ -158,13 +158,13 @@ object RowPreferences {
         val pref = PreferenceManager.getDefaultSharedPreferences(context)
         val res = context.resources
         return when (cat) {
-            AppCategory.GAME -> {
+            AppCategory.SPORTS -> {
                 pref.getString(
                     context.getString(R.string.pref_max_games_rows),
                     res.getInteger(R.integer.max_num_banner_rows).toString()
                 )?.toIntOrNull() ?: context.resources.getInteger(R.integer.max_num_banner_rows)
             }
-            AppCategory.MUSIC -> {
+            AppCategory.TV -> {
                 pref.getString(
                     context.getString(R.string.pref_max_music_rows),
                     res.getInteger(R.integer.max_num_banner_rows).toString()
@@ -189,12 +189,12 @@ object RowPreferences {
     fun setRowMax(cat: AppCategory?, context: Context, max: Int): Boolean {
         val pref = PreferenceManager.getDefaultSharedPreferences(context)
         when (cat) {
-            AppCategory.GAME -> {
+            AppCategory.SPORTS -> {
                 pref.edit()
                     .putString(context.getString(R.string.pref_max_games_rows), max.toString())
                     .apply()
             }
-            AppCategory.MUSIC -> {
+            AppCategory.TV -> {
                 pref.edit()
                     .putString(context.getString(R.string.pref_max_music_rows), max.toString())
                     .apply()

@@ -63,9 +63,9 @@
     <string name="banners_size">Banners Size (50–200%)</string>
     <string name="category_label_apps">Apps</string>
     <string name="category_label_favorites">Favorites</string>
-    <string name="category_label_games">Games</string>
+    <string name="category_label_games">Sports</string>
     <string name="category_label_inputs">Inputs</string>
-    <string name="category_label_music">Music</string>
+    <string name="category_label_music">TV</string>
     <string name="category_label_settings" />
     <string name="category_label_videos">Video</string>
     <string name="common_google_play_services_enable_button">Enable</string>
@@ -86,7 +86,7 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="customize_app_order_action_title">Reorder apps row</string>
-    <string name="customize_game_order_action_title">Reorder games row</string>
+    <string name="customize_game_order_action_title">Reorder sports row</string>
     <string name="downloading">Downloading…</string>
     <string name="edit_finish_button_text">Done</string>
     <string name="edit_row_title">Edit Home Rows</string>
@@ -103,7 +103,7 @@
     <string name="focused_search_mic_hint_text">Click to speak</string>
     <string name="font" translatable="false">sans-serif-condensed</string>
     <string name="goback" translatable="false">[ .. ]</string>
-    <string name="games_row_title">Show Games Row</string>
+    <string name="games_row_title">Show Sports Row</string>
     <string name="hidden_applications_desc">Selected apps are hidden from the home screen</string>
     <string name="hidden_applications_title">Hidden Applications</string>
     <string name="hidden_applications_empty">No hidden applications</string>
@@ -162,11 +162,11 @@
     <string name="max_apps_rows_title">Max Apps Rows</string>
     <string name="max_col_title">Visible Columns</string>
     <string name="max_favorites_rows_title">Max Favorites Rows</string>
-    <string name="max_games_rows_title">Max Games Rows</string>
-    <string name="max_music_rows_title">Max Music Rows</string>
+    <string name="max_games_rows_title">Max Sports Rows</string>
+    <string name="max_music_rows_title">Max TV Rows</string>
     <string name="max_videos_rows_title">Max Videos Rows</string>
     <string name="mic_search_accessibility_hint">Select to speak your search query</string>
-    <string name="music_row_title">Show Music Row</string>
+    <string name="music_row_title">Show TV Row</string>
     <string name="notif_service_name">Notifications Service</string>
     <string name="notification_card_view_description_default">No title</string>
     <string name="notification_card_view_description_label_content">%1$s %2$s</string>

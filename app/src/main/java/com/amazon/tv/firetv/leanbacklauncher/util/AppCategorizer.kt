@@ -36,7 +36,7 @@ object AppCategorizer {
         "ctcmediagroup.ctc",
         "dailymotion",
         "de.swr.ard",
-        "disney",
+        "com.disney.disneyplus",
         "divantv",
         "domatv.app",
         "dramafever",
@@ -132,7 +132,6 @@ object AppCategorizer {
         "spb.tv",
         "spbtv",
         "starz",
-        "ted",
         "tencent.qqlivei18n",
         "tiktok",
         "tnt_premier",
@@ -164,7 +163,6 @@ object AppCategorizer {
         "useetv",
         "uz.allplay.apptv",
         "uz.i_tv.player",
-        "video",
         "videomanager.kids",
         "vidio.android",
         "viewbox",
@@ -179,8 +177,9 @@ object AppCategorizer {
         "youtube",
         "yuriev.ndr",
         "zona",
+        "com.peacock.peacockfiretv"
     )
-    private val MUSIC_FILTER = arrayOf(
+    private val TV_FILTER = arrayOf(
         "audials",
         "audioplayer",
         "deezer",
@@ -195,12 +194,20 @@ object AppCategorizer {
         "tidal",
         "tunein",
         "zaycev",
+        "com.att.tv",
+        "com.cw.tv.android",
+        "com.fox.now",
+        "com.disney.datg.videoplatforms.android.amazon.kindle.abc"
     )
-    private val GAMES_FILTER = arrayOf(
+    private val SPORTS_FILTER = arrayOf(
         "android.play.games",
         "signaltalk",
         "tetris",
         "com.google.stadia",
+        "com.flipps.fitetv",
+        "com.njpwworld.NJPWWORLD",
+        "com.espn.gtv",
+        "com.sports.bleacherreport"
     )
 
     @Suppress("DEPRECATION")
@@ -211,14 +218,14 @@ object AppCategorizer {
                     return AppCategory.VIDEO
                 }
             }
-            for (s in MUSIC_FILTER) {
+            for (s in TV_FILTER) {
                 if (pn.contains(s)) {
-                    return AppCategory.MUSIC
+                    return AppCategory.TV
                 }
             }
-            for (s in GAMES_FILTER) {
+            for (s in SPORTS_FILTER) {
                 if (pn.contains(s)) {
-                    return AppCategory.GAME
+                    return AppCategory.SPORTS
                 }
             }
         }
@@ -229,18 +236,18 @@ object AppCategorizer {
                     false
                 )
             ) {
-                return AppCategory.GAME
+                return AppCategory.SPORTS
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 when (ai.applicationInfo.category) {
                     ApplicationInfo.CATEGORY_GAME -> {
-                        return AppCategory.GAME
+                        return AppCategory.SPORTS
                     }
                     ApplicationInfo.CATEGORY_VIDEO -> {
                         return AppCategory.VIDEO
                     }
                     ApplicationInfo.CATEGORY_AUDIO -> {
-                        return AppCategory.MUSIC
+                        return AppCategory.TV
                     }
                     ApplicationInfo.CATEGORY_ACCESSIBILITY,
                     ApplicationInfo.CATEGORY_IMAGE,

@@ -88,7 +88,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
         } else if (catId == musicIndex.toLong()) {
             when (subId) {
                 0 -> {
-                    enabled = categories.contains(AppCategory.MUSIC)
+                    enabled = categories.contains(AppCategory.TV)
                     setMusicEnabled(activity, !enabled)
                 }
                 1 -> {
@@ -97,7 +97,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
                     } catch (nfe: NumberFormatException) {
                         1
                     }
-                    setRowMax(AppCategory.MUSIC, activity, value)
+                    setRowMax(AppCategory.TV, activity, value)
                 }
             }
         } else if (catId == videoIndex.toLong()) {
@@ -118,7 +118,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
         } else if (catId == gameIndex.toLong()) {
             when (subId) {
                 0 -> {
-                    enabled = categories.contains(AppCategory.GAME)
+                    enabled = categories.contains(AppCategory.SPORTS)
                     setGamesEnabled(activity, !enabled)
                 }
                 1 -> {
@@ -127,7 +127,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
                     } catch (nfe: NumberFormatException) {
                         1
                     }
-                    setRowMax(AppCategory.GAME, activity, value)
+                    setRowMax(AppCategory.SPORTS, activity, value)
                 }
             }
         } else if (id == ACTION_ID_APPS_MAX.toLong()) {
@@ -239,7 +239,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
         )
         videoIndex = (index - 1) / 2
         // MUSIC
-        state = categories.contains(AppCategory.MUSIC)
+        state = categories.contains(AppCategory.TV)
         desc =
             if (state) getString(R.string.v7_preference_on) else getString(R.string.v7_preference_off)
         actions.add(
@@ -249,7 +249,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
                 .description(desc)
                 .build()
         )
-        maxRows = getRowMax(AppCategory.MUSIC, activity)
+        maxRows = getRowMax(AppCategory.TV, activity)
         actions.add(
             GuidedAction.Builder(activity)
                 .id((++index).toLong())
@@ -261,7 +261,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
         )
         musicIndex = (index - 1) / 2
         // GAME
-        state = categories.contains(AppCategory.GAME)
+        state = categories.contains(AppCategory.SPORTS)
         desc =
             if (state) getString(R.string.v7_preference_on) else getString(R.string.v7_preference_off)
         actions.add(
@@ -271,7 +271,7 @@ class LegacyAppRowPreferenceFragment : GuidedStepSupportFragment() {
                 .description(desc)
                 .build()
         )
-        maxRows = getRowMax(AppCategory.GAME, activity)
+        maxRows = getRowMax(AppCategory.SPORTS, activity)
         actions.add(
             GuidedAction.Builder(activity)
                 .id((++index).toLong())
